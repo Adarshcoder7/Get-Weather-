@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            margin: 10;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            text-align: center;
+        }
+        .weather {
+            text-align: center;
+            justify-content: center;
+            border-radius: 200px;
+            color: rgb(194, 70, 13);
+            animation: fadeIn 2s ease;
+        }
+        .main {
+            height: 450px;
+            width: 350px;
+            border-radius: 20px;
+            border-color: black;
+            background-color: whitesmoke;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .main:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
+        .img {
+            height: 50px;
+            justify-content: center;
+            text-align: center;
+        }
+        .im {
+            text-align: center;
+        }
+        #city{
+            margin-top: 5%;
+        }
+        #bid {
+            margin-top: 5%;
+        }
+        #city-nam {
+            color: rgb(10, 1, 1);
+        }
+        #city-time {
+            color: mediumspringgreen;
+        }
+        #city-temp {
+            color: rgb(145, 145, 6);
+        }
+        #city-wind {
+            color: rgb(243, 8, 11);
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 50px
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 50px;
+            color: rgb(201, 121, 16);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        button:hover {
+           /* background-color: rgb(16, 240, 240);*/
+            border-color: red;
+            border-width: 2.5px;
+        }
+        input:hover {
+            border-color: rgb(3, 3, 246);
+            border-width: 2.5px;
+        }
+    .main, input, button {
+        transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+        .main {
+            width: 300px;
+            height: auto;
+        }
+
+        .img {
+            height: 40px;
+        }
+
+        input {
+            font-size: 14px;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+    }
+    @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    @media (max-width: 480px) {
+        .main {
+            width: 90%;
+        }
+
+        input {
+            width: 80%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="weather">WEATHER</h1>
+        <div class="im">
+            <img src="weather02-512.webp" alt="not found" class="img">
+        </div>
+        <div class="container">
+            <input id="city" type="text" style="color: blue;" placeholder="Enter the City">
+            <button id="bid">GET</button>
+            <div>
+                <h2 id="city-nam">CITY NAME</h2>
+                <h4 id="city-time">CITY TIME</h4>
+                <h4><p id="city-temp">CITY TEMPRATURE</p></h4>
+                <h4 id="city-wind"><p>WIND SPEED</p></h4>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
